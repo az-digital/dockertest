@@ -12,5 +12,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag dockertest:latest
+            && docker login docker.pkg.github.com --username {{secrets.GITHUB_TOKEN}}
             && docker tag dockertest docker.pkg.github.com/az-digital/dockertest/dockertest:latest
             && docker push docker.pkg.github.com/az-digital/dockertest/dockertest:latest
