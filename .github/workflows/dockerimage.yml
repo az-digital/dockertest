@@ -12,5 +12,5 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag dockertest:latest
-            && docker tag IMAGE_ID docker.pkg.github.com/az-digital/dockertest/dockertest:latest
+            && docker tag dockertest docker.pkg.github.com/az-digital/dockertest/dockertest:latest
             && docker push docker.pkg.github.com/az-digital/dockertest/dockertest:latest
